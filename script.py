@@ -17,7 +17,11 @@ with open('cardiovascular_risk_dataset.csv', 'r') as f:
     DietQuality.sort()
     print (len(AlcoholUnitsDrunk), len(DietQuality))
     fig, ax = plt.subplots()
-    ax.plot(AlcoholUnitsDrunk, DietQuality,'ro')
+    #ax.plot(AlcoholUnitsDrunk, DietQuality,'bo')
+    plt.plot(AlcoholUnitsDrunk, DietQuality, 'go')
+    plt.scatter(AlcoholUnitsDrunk, DietQuality, plotnonfinite=True, alpha=0.1)
+    plt.xlabel("Alcohol Units drunk (au)")
+    plt.ylabel("Diet Quality (1-10)")
     plt.show()
 
 
