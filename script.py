@@ -6,4 +6,4 @@ import pandas as pd
 CardioData = pd.read_csv('cardiovascular_risk_dataset.csv')
 print ("hello")
 CardioData.plot(kind= 'scatter',x = "Alcohol Units drunk", y = "data quality")
-plt.show()
+CardioData.show()
