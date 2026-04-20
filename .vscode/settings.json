@@ -2,10 +2,10 @@
     "python-envs.pythonProjects": [
         {
             "path": "script.py",
-            "envManager": "ms-python.python:conda",
-            "packageManager": "ms-python.python:conda"
+            "envManager": "ms-python.python:system",
+            "packageManager": "ms-python.python:pip"
         }
     ],
-    "python-envs.defaultPackageManager": "ms-python.python:conda",
-    "python-envs.defaultEnvManager": "ms-python.python:conda"
+    "python-envs.defaultPackageManager": "ms-python.python:pip",
+    "python-envs.defaultEnvManager": "ms-python.python:system"
 }
