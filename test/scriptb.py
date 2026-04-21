@@ -1,6 +1,7 @@
 #what is the relationship between diet quality and alcohol units drunk?
 import csv
 import matplotlib.pyplot as plt
+import numpy as np 
 
 with open('cardiovascular_risk_dataset.csv', 'r') as f:
     csv_reader = csv.reader(f)
@@ -12,11 +13,14 @@ with open('cardiovascular_risk_dataset.csv', 'r') as f:
         data = float(row[14])
         AlcoholUnitsDrunk.append(data)
         dat = float(row[13])
-        DietQuality.append(dat)
+        DietQuality.append(data)
     #AlcoholUnitsDrunk.sort()
     #DietQuality.sort()
     print (len(AlcoholUnitsDrunk), len(DietQuality))
     fig, ax = plt.subplots()
+    slope, intercept = np.polyfit(DietQuality, AlcoholUnitsDrunk, 1)
+    best_fit_line = slope * DietQuality + intercept
+
     plt.plot(AlcoholUnitsDrunk, DietQuality, 'go')
     plt.scatter(AlcoholUnitsDrunk, DietQuality, plotnonfinite=True, alpha=0.1)
     plt.xlabel("Alcohol Units drunk (au)")
